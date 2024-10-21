@@ -1,24 +1,4 @@
-"""
-Apache License 2.0
-Copyright (c) 2022 @Illegal_Developer
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-Telegram Link : https://t.me/IllegalDeveloperBot
-Repo Link : https://github.com/IllegalDeveloper/ILLEGAL-RENAME-BOT
-License Link : https://github.com/IllegalDeveloper/ILLEGAL-RENAME-BOT/blob/main/LICENSE
-"""
+
 
 import re, os, time
 
@@ -26,19 +6,19 @@ id_pattern = re.compile(r'^.\d+$')
 
 class Config(object):
     # pyro client config
-    API_ID    = os.environ.get("API_ID", "")
-    API_HASH  = os.environ.get("API_HASH", "")
-    BOT_TOKEN = os.environ.get("BOT_TOKEN", "") 
+    API_ID    = os.environ.get("API_ID", "26847865")
+    API_HASH  = os.environ.get("API_HASH", "0ef9fdd3e5f1ed49d4eb918a07b8e5d6")
+    BOT_TOKEN = os.environ.get("BOT_TOKEN", "6757393088:AAF8e-py0BN33-2urLVapKJRHgjpgAQE6S4") 
    
     # database config
     DB_NAME = os.environ.get("DB_NAME","Cluster0")    
-    DB_URL  = os.environ.get("DB_URL","")
+    DB_URL  = os.environ.get("DB_URL","mongodb+srv://kantibhaipurohit195:nTA6VVaXfCu4h7L9@cluster0.alhatp9.mongodb.net/?retryWrites=true&w=majority")
  
     # other configs
     BOT_UPTIME  = time.time()
     START_PIC   = os.environ.get("START_PIC", "https://graph.org/file/5849cf75c310d53bf5705.jpg")
-    ADMIN       = [int(admin) if id_pattern.search(admin) else admin for admin in os.environ.get('ADMIN', '1229852181').split()]
-    FORCE_SUB   = os.environ.get("FORCE_SUB", "Illegal_Developer") 
+    ADMIN       = [int(admin) if id_pattern.search(admin) else admin for admin in os.environ.get('ADMIN', '6789146594').split()]
+    FORCE_SUB   = os.environ.get("FORCE_SUB", "jn_Bots") 
     LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", None))
 
     # wes response configuration     
