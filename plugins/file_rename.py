@@ -1,6 +1,6 @@
 from pyrogram import Client, filters
 from pyrogram.enums import MessageMediaType
-from config import LOG_CHANNEL
+from config import Config
 from pyrogram.errors import FloodWait
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, ForceReply
 
