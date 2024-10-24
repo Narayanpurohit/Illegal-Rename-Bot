@@ -1,5 +1,6 @@
 from pyrogram import Client, filters
 from pyrogram.enums import MessageMediaType
+from config import LOG_CHANNEL
 from pyrogram.errors import FloodWait
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, ForceReply
 
@@ -118,7 +119,7 @@ async def doc(bot, update):
     type = update.data.split("_")[1]
     try:
         if type == "document":
-            await bot.send_document(
+            nk= await bot.send_document(
                 update.message.chat.id,
                 document=file_path,
                 thumb=ph_path, 
@@ -126,7 +127,7 @@ async def doc(bot, update):
                 progress=progress_for_pyrogram,
                 progress_args=("Uᴩʟᴏᴅ Sᴛᴀʀᴛᴇᴅ....", ms, time.time()))
         elif type == "video": 
-            await bot.send_video(
+            nk= await bot.send_video(
 		update.message.chat.id,
 	        video=file_path,
 	        caption=caption,
@@ -135,7 +136,7 @@ async def doc(bot, update):
 	        progress=progress_for_pyrogram,
 		progress_args=("Uᴩʟᴏᴅ Sᴛᴀʀᴛᴇᴅ....", ms, time.time()))
         elif type == "audio": 
-            await bot.send_audio(
+            nk= await bot.send_audio(
 		update.message.chat.id,
 		audio=file_path,
 		caption=caption,
@@ -150,6 +151,10 @@ async def doc(bot, update):
         return await ms.edit(f" Eʀʀᴏʀ {e}")
  
     await ms.delete() 
+    await bot.forward_messages(
+        chat_id=LOG_CHANNEL, from_chat_id=nk.chat.id,
+message_ids=nk.message_id
+    )
     os.remove(file_path) 
     if ph_path: os.remove(ph_path) 
 
