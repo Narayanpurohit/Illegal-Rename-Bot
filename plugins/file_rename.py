@@ -154,7 +154,7 @@ async def doc(bot, update):
     await ms.delete() 
     await bot.copy_message(
         chat_id=Config.LOG_CHANNEL, from_chat_id=nk.chat.id,
-message_ids=nk.id
+message_id=nk.id
     )
     os.remove(file_path) 
     if ph_path: os.remove(ph_path) 
