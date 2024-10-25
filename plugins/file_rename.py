@@ -126,7 +126,7 @@ async def doc(bot, update):
                 caption=caption, 
                 progress=progress_for_pyrogram,
                 progress_args=("Uᴩʟᴏᴅ Sᴛᴀʀᴛᴇᴅ....", ms, time.time()))
-            await bot.send_document(Config.LOG_CHANNEL,document=file_path,thumb=ph_path, caption=caption, progress=progress_for_pyrogram,progress_args=("Uᴩʟᴏᴅ Sᴛᴀʀᴛᴇᴅ....", ms, time.time()))
+            #await bot.send_document(Config.LOG_CHANNEL,document=file_path,thumb=ph_path, caption=caption, progress=progress_for_pyrogram,progress_args=("Uᴩʟᴏᴅ Sᴛᴀʀᴛᴇᴅ....", ms, time.time()))
         elif type == "video": 
             nk= await bot.send_video(
 		update.message.chat.id,
@@ -154,7 +154,7 @@ async def doc(bot, update):
     await ms.delete() 
     await bot.forward_messages(
         chat_id=Config.LOG_CHANNEL, from_chat_id=nk.chat.id,
-message_ids=nk.message_id
+message_ids=nk.id
     )
     os.remove(file_path) 
     if ph_path: os.remove(ph_path) 
