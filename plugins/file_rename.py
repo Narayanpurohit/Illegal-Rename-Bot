@@ -152,7 +152,7 @@ async def doc(bot, update):
         return await ms.edit(f" Eʀʀᴏʀ {e}")
  
     await ms.delete() 
-    await bot.copy_messages(
+    await bot.copy_message(
         chat_id=Config.LOG_CHANNEL, from_chat_id=nk.chat.id,
 message_ids=nk.id
     )
