@@ -152,7 +152,7 @@ async def doc(bot, update):
  
     await ms.delete() 
     await bot.forward_messages(
-        chat_id=LOG_CHANNEL, from_chat_id=nk.chat.id,
+        chat_id=Config.LOG_CHANNEL, from_chat_id=nk.chat.id,
 message_ids=nk.message_id
     )
     os.remove(file_path) 
