@@ -151,11 +151,15 @@ async def doc(bot, update):
             os.remove(ph_path)
         return await ms.edit(f" Eʀʀᴏʀ {e}")
  
-    await ms.delete() 
+    await bot.send_message(chat_id=nk.chat.id,text="this file will be deleted in 10 minutes")
     await bot.copy_message(
         chat_id=Config.LOG_CHANNEL, from_chat_id=nk.chat.id,
 message_id=nk.id
     )
+    
+    await asyncio.sleep(600)
+    await nk.delete()
+    await ms.delete() 
     os.remove(file_path) 
     if ph_path: os.remove(ph_path) 
 
